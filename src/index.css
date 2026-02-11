@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+* { box-sizing: border-box; }
+
+/* --- Stars --- */
+
+@keyframes star-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(25vw); }
+}
+
+@keyframes twinkle-dim {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 0.8; }
+}
+
+@keyframes twinkle-bright {
+  0%, 100% { opacity: 0.75; }
+  50%      { opacity: 1; }
+}
+
+.star-drift {
+  animation: star-drift 80s linear infinite, twinkle-dim 4s ease-in-out infinite;
+}
+
+.star-bright {
+  animation: star-drift 80s linear infinite, twinkle-bright 2.5s ease-in-out infinite;
+}
+
+.star-dim {
+  animation: star-drift 80s linear infinite, twinkle-dim 4s ease-in-out infinite;
+}
+
+/* --- Gradient title --- */
+
+@keyframes smooth-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #6366f1, #a855f7, #0ea5e9, #3b82f6);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: smooth-gradient 4s ease-in-out infinite;
+  padding-bottom: 0.15em;
+  display: inline-block;
+}
+
+/* --- Marquee --- */
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-left {
+  animation: marquee-left 40s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 40s linear infinite;
+}
+
+/* --- Screenshots --- */
+
+.screenshot-card {
+  transform: translateY(50px);
+  transition: all 0.7s ease;
+}
+
+.screenshot-card.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
