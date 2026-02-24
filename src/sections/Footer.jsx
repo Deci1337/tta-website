@@ -1,4 +1,5 @@
 import { useLang } from "../context/LangContext";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   const { t } = useLang();
@@ -70,9 +71,17 @@ export function Footer() {
 
           <div>
             <h4 className="text-white font-semibold mb-4">{t("footer.links")}</h4>
-            <a href="#download" className="text-white/60 hover:text-white transition-colors">
-              {t("footer.download")}
-            </a>
+            <div className="flex flex-col gap-3">
+              <a href="#download" className="text-white/60 hover:text-white transition-colors">
+                {t("footer.download")}
+              </a>
+              <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
+                {t("footer.privacy")}
+              </Link>
+              <Link to="/terms-of-service" className="text-white/60 hover:text-white transition-colors">
+                {t("footer.terms")}
+              </Link>
+            </div>
           </div>
 
         </div>

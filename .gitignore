@@ -25,3 +25,6 @@ dist-ssr
 
 # Vercel
 .vercel
+
+# Cursor skills (local dev reference)
+.cursor/
