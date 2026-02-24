@@ -8,7 +8,6 @@ import { PageMeta } from "../components/PageMeta";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { PrintButton } from "../components/PrintButton";
 import { StructuredData, createWebPageSchema } from "../components/StructuredData";
-import { motion } from "framer-motion";
 
 export function PrivacyPolicy() {
   const { t, lang } = useLang();
@@ -139,12 +138,7 @@ export function PrivacyPolicy() {
         },
         {
           title: "13. Контактная информация",
-          content: `По вопросам конфиденциальности обращайтесь:`,
-          list: [
-            "Email: privacy@tiktokagent.com",
-            "Telegram: @unrealveliky или @kaabaharamhalal",
-            "Адрес: [Укажите юридический адрес компании]"
-          ]
+          content: `По вопросам конфиденциальности обращайтесь в Telegram: @unrealveliky или @kaabaharamhalal`
         },
         {
           title: "14. Надзорный орган",
@@ -264,12 +258,7 @@ export function PrivacyPolicy() {
         },
         {
           title: "13. Contact Information",
-          content: `For privacy inquiries, contact us:`,
-          list: [
-            "Email: privacy@tiktokagent.com",
-            "Telegram: @unrealveliky or @kaabaharamhalal",
-            "Address: [Specify company legal address]"
-          ]
+          content: `For privacy inquiries, contact us on Telegram: @unrealveliky or @kaabaharamhalal`
         },
         {
           title: "14. Supervisory Authority",
@@ -297,21 +286,10 @@ export function PrivacyPolicy() {
       <div className="max-w-5xl mx-auto px-6 py-12">
         <Breadcrumbs />
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <LegalNav />
-        </motion.div>
+        <LegalNav />
 
         <div className="grid lg:grid-cols-[1fr_300px] gap-8">
-          <motion.div 
-            className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
+          <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
             <div className="flex items-start justify-between mb-8">
               <div className="flex-1">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
@@ -335,14 +313,10 @@ export function PrivacyPolicy() {
 
             <div className="space-y-8">
               {currentContent.sections.map((section, index) => (
-                <motion.section 
+                <section 
                   key={index} 
                   id={`section-${index}`} 
                   className="scroll-mt-24"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
                 >
                   <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 text-sm font-bold">
@@ -365,7 +339,7 @@ export function PrivacyPolicy() {
                       ))}
                     </ul>
                   )}
-                </motion.section>
+                </section>
               ))}
             </div>
 
@@ -383,16 +357,11 @@ export function PrivacyPolicy() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:block"
-          >
+          <div className="lg:block">
             <TableOfContents sections={currentContent.sections} lang={lang} />
-          </motion.div>
+          </div>
         </div>
       </div>
 

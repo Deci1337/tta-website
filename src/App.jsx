@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CosmicBackground } from "./components/CosmicBackground";
 import { LangSwitcher } from "./components/LangSwitcher";
+import { ScrollToTopOnRouteChange } from "./components/ScrollToTopOnRouteChange";
 import { CookieBanner } from "./components/CookieBanner";
 import { Hero } from "./sections/Hero";
 import { Features } from "./sections/Features";
@@ -35,6 +36,7 @@ function HomePage() {
 function App() {
   return (
     <Router>
+      <ScrollToTopOnRouteChange />
       <div className="min-h-screen text-foreground selection:bg-purple-500/30">
         <Routes>
           <Route path="/" element={<HomePage />} />

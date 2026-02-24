@@ -54,7 +54,7 @@ export function TableOfContents({ sections, lang }) {
       ${isSticky ? 'sticky top-24' : ''}
       transition-all duration-300
     `}>
-      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6 max-h-[calc(100vh-200px)] overflow-y-auto">
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6">
         <h3 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">
           {lang === 'ru' ? 'Содержание' : 'Contents'}
         </h3>
